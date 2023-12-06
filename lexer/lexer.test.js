@@ -1,4 +1,4 @@
-const { EOF, SEMICOLON, COLON, ASTERIX, COMMA, PLUS, MINUS, SLASH, FUNCTION, LET, TRUE, IDENT, RETURN, INT, ASSIGN, EQ, NOT_EQ, BANG} = require("../token/token");
+const { EOF, SEMICOLON, COLON, ASTERIX, COMMA, PLUS, MINUS, SLASH, FUNCTION, LET, TRUE, IDENT, RETURN, INT, ASSIGN, EQ, NOT_EQ, BANG, STRING} = require("../token/token");
 const { NewLexer } = require("./lexer");
 
 test('Lexer works for empty program', () => {
@@ -24,14 +24,16 @@ test('Lexer works for special characters', () => {
     expect(lexer.nextToken()).toEqual({Type: EOF, Literal: ""});
 });
 
-test('Lexer works for keywords and identifiers', () => {
-    const program = 'fn let true random return';
+test('Lexer works for keywords, identifiers and strings', () => {
+    const program = 'fn let true random return "randomstring" "another string"';
     const lexer = NewLexer(program);
     expect(lexer.nextToken()).toEqual({Type: FUNCTION, Literal: "fn"});
     expect(lexer.nextToken()).toEqual({Type: LET, Literal: "let"});
     expect(lexer.nextToken()).toEqual({Type: TRUE, Literal: "true"});
     expect(lexer.nextToken()).toEqual({Type: IDENT, Literal: "random"});
     expect(lexer.nextToken()).toEqual({Type: RETURN, Literal: "return"});
+    expect(lexer.nextToken()).toEqual({Type: STRING, Literal: "randomstring"});
+    expect(lexer.nextToken()).toEqual({Type: STRING, Literal: "another string"});
     expect(lexer.nextToken()).toEqual({Type: EOF, Literal: ""});
 });
 
