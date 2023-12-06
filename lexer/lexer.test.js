@@ -1,4 +1,4 @@
-const { EOF, SEMICOLON, COLON, ASTERIX, COMMA, PLUS, MINUS, SLASH, FUNCTION, LET, TRUE, IDENT, RETURN, INT} = require("../token/token");
+const { EOF, SEMICOLON, COLON, ASTERIX, COMMA, PLUS, MINUS, SLASH, FUNCTION, LET, TRUE, IDENT, RETURN, INT, ASSIGN, EQ} = require("../token/token");
 const { NewLexer } = require("./lexer");
 
 test('Lexer works for empty program', () => {
@@ -8,7 +8,7 @@ test('Lexer works for empty program', () => {
 });
 
 test('Lexer works for special characters', () => {
-    const program = ';:,*+-/';
+    const program = ';:,*+-/= ==';
     const lexer = NewLexer(program);
     expect(lexer.nextToken()).toEqual({Type: SEMICOLON, Literal: ";"});
     expect(lexer.nextToken()).toEqual({Type: COLON, Literal: ":"});
@@ -17,6 +17,8 @@ test('Lexer works for special characters', () => {
     expect(lexer.nextToken()).toEqual({Type: PLUS, Literal: "+"});
     expect(lexer.nextToken()).toEqual({Type: MINUS, Literal: "-"});
     expect(lexer.nextToken()).toEqual({Type: SLASH, Literal: "/"});
+    expect(lexer.nextToken()).toEqual({Type: ASSIGN, Literal: "="});
+    expect(lexer.nextToken()).toEqual({Type: EQ, Literal: "=="});
     expect(lexer.nextToken()).toEqual({Type: EOF, Literal: ""});
 });
 
@@ -39,6 +41,7 @@ test('Lexer works for integers', () => {
     expect(lexer.nextToken()).toEqual({Type: INT, Literal: "69420"});
     expect(lexer.nextToken()).toEqual({Type: EOF, Literal: ""});
 });
+
 
 test('Lexer works for a different token types in one program', () => {
     const program = ';:,*+-/ fn x let y true random return z 69 420 69420';
