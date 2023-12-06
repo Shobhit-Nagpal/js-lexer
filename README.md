@@ -8,13 +8,19 @@ Check out the Monkey interpreter: https://github.com/Shobhit-Nagpal/monkey-inter
 If you wish to try out the lexer, make sure you have Node along with npm installed and do the following steps:
 
 ### 1. Clone the repo
-```git clone https://github.com/Shobhit-Nagpal/js-lexer```
+``` shell
+git clone https://github.com/Shobhit-Nagpal/js-lexer
+```
 
 ### 2. Change directory
-```cd js-lexer```
+``` shell
+cd js-lexer
+```
 
 ### 3. Run the lexer through the REPL
-```node repl/repl.js```
+``` shell
+node repl/repl.js
+```
 
 ### 4. Have fun!
 Play around with the lexer, see what all you can tokenize :)
