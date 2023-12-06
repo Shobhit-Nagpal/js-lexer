@@ -1,4 +1,4 @@
-const {Token, LookUpIdent, PLUS, MINUS, ASTERIX, GT, LT, SEMICOLON, LPAREN, RPAREN, EOF, COMMA, COLON, LBRACKET, ILLEGAL, INT, RBRACKET, LBRACE, RBRACE } = require("../token/token");
+const {Token, LookUpIdent, PLUS, MINUS, ASTERIX, GT, LT, SEMICOLON, LPAREN, RPAREN, EOF, COMMA, COLON, LBRACKET, ILLEGAL, INT, RBRACKET, LBRACE, RBRACE, SLASH } = require("../token/token");
 
 class Lexer {
     constructor(program) {
@@ -70,6 +70,9 @@ class Lexer {
                 break;
             case ']':
                 tok = newToken(RBRACKET, this.ch);
+                break;
+            case '/':
+                tok = newToken(SLASH, this.ch);
                 break;
             default:
                 if (isDigit(this.ch)) {
