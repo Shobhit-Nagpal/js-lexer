@@ -11,7 +11,7 @@
   "name": "@shobhit-nagpal/js-lexer",
   "description": "JS-Lexer is a project inspired from making a Monkey interpreter in Go by reading 'Writing an Interpreter in Go' by Thorsten Ball. The goal was simply to build the lexer out on my own in JS.",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "lexer/lexer.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Shobhit-Nagpal/js-lexer.git"
