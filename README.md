@@ -6,6 +6,12 @@ It is also published as an npm package: https://www.npmjs.com/package/@shobhit-n
 
 Check out the Monkey interpreter: https://github.com/Shobhit-Nagpal/monkey-interpreter
 
+# Install as npm package
+To install the lexer as an npm package, run the following command in your terminal:
+``` shell
+npm i @shobhit-nagpal/js-lexer
+````
+
 # Local deployment
 If you wish to try out the lexer, make sure you have Node along with npm installed and do the following steps:
 
