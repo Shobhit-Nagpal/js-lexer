@@ -1,11 +1,25 @@
 {
-    "scripts": {
-        "test": "jest"
-    },
-    "dependencies": {
-        "prompt-sync": "^4.2.0"
-    },
-    "devDependencies": {
-        "jest": "^29.7.0"
-    }
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "name": "@shobhit-nagpal/js-lexer",
+  "description": "JS-Lexer is a project inspired from making a Monkey interpreter in Go by reading 'Writing an Interpreter in Go' by Thorsten Ball. The goal was simply to build the lexer out on my own in JS.",
+  "version": "1.0.0",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shobhit-Nagpal/js-lexer.git"
+  },
+  "author": "Shobhit Nagpal",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Shobhit-Nagpal/js-lexer/issues"
+  },
+  "homepage": "https://github.com/Shobhit-Nagpal/js-lexer#readme"
 }
