@@ -19,7 +19,7 @@ cd js-lexer
 
 ### 3. Run the lexer through the REPL
 ``` shell
-node repl/repl.js
+node main.js
 ```
 
 ### 4. Have fun!
