@@ -12,6 +12,44 @@ To install the lexer as an npm package, run the following command in your termin
 npm i @shobhit-nagpal/js-lexer
 ````
 
+# Usage
+``` node
+const { NewLexer } = require("@shobhit-nagpal/js-lexer");
+const { EOF } = require("@shobhit-nagpal/js-lexer/token/token");
+
+const program = 
+    `let x = 5;
+     y;
+     z = "string";
+`;
+
+function init(program) {
+    const lexer = NewLexer(program);
+
+    let token;
+
+    for (token = lexer.nextToken() ; token.Type != EOF ; token = lexer.nextToken()) {
+        console.log(token);
+    }
+}
+
+init(program);
+```
+The output of the example progam would be:
+``` text
+Token { Literal: 'let', Type: 'LET' }
+Token { Literal: 'x', Type: 'IDENT' }
+Token { Type: '=', Literal: '=' }
+Token { Type: 'INT', Literal: '5' }
+Token { Type: ';', Literal: ';' }
+Token { Literal: 'y', Type: 'IDENT' }
+Token { Type: ';', Literal: ';' }
+Token { Literal: 'z', Type: 'IDENT' }
+Token { Type: '=', Literal: '=' }
+Token { Type: 'STRING', Literal: 'string' }
+Token { Type: ';', Literal: ';' }
+```
+
 # Local deployment
 If you wish to try out the lexer, make sure you have Node along with npm installed and do the following steps:
 
